@@ -12,10 +12,9 @@
     <div class="main-container">
       <a href="index.html" class="header-logo-link"><img src="graphics/01_header/Logo.png" alt="Lagoona hotels logo"
           class="header-logo"></a>
-      <div class="header-container-phone"><a href="tel:+74953225448" class="header-phone-makecall">+7 495 322 54 48</a>
-      </div>
-      <div class="header-container-profile"><a href=" " rel="nofollow" class="header-profile-login">Личный кабинет</a>
-      </div> <!-- внести ссылку на страницу личного кабинета -->
+      <a href="tel:+74953225448" class="header-phone-makecall">+7 495 322 54 48</a>
+      <a href=" " rel="nofollow" class="header-profile-login">Личный кабинет</a>
+      <!-- внести ссылку на страницу личного кабинета -->
       <nav class="navigation">
         <ul class="header-nav-menu">
           <li class="nav-menu-item"><a href="#about-us-header" class="nav-menu-link">О нас</a></li>
@@ -27,51 +26,54 @@
           <li class="nav-menu-item"><a href="#" class="nav-menu-link">Контакты</a></li>
           <!-- Указать класс раздела страницы после # -->
         </ul>
+        <form style="display: flex;" class="header-searchform">
+          <input type="search" placeholder="Поиск" class="header-searchform-inputfield">
+          <button class="searchform-inputfield-searchbutton"></button>
+        </form>
       </nav>
-      <div class="search">
-        <input type="search" placeholder="Поиск" class="header-search-field">
-      </div>
     </div>
   </header>
 
   <main class="main">
 
-    <section class="section-quick-reservation">
-      <div class="main-container">
-        <h2 class="section-header">Быстрая бронь</h2>
-        <div class="quick-reservation-input-form">
-          <input type="text" placeholder="Город" required class="input-quickreserv-field">
-          <input type="text" placeholder="Категория номера" list="reserv-room-type" class="input-quickreserv-field">
-          <!-- list= id элемента <datalist> со списком категорий номеров -->
-          <datalist id="reserv-room-type">
-            <option value="Эконом"></option>
-            <option value="Семейный"></option>
-            <option value="Бизнес"></option>
-            <option value="Премиум"></option>
-          </datalist>
-          <input type="text" placeholder="Дата заселения" required class="input-quickreserv-field">
-          <input type="number" placeholder="Количество ночей" min="1" max="30" step="1" required class="input-quickreserv-field">
-          <input type="number" placeholder="Количество гостей" min="1" max="9" step="1" required class="input-quickreserv-field">
-          <input type="submit" value="Найти номер" class="input-quickreserv-submit-btn">
-          <small class="quickreserv-offers-counter"><span class="quickreserv-total-offersnumber">9 756</span>
-            предложений доступно</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-special-offer">
-      <div class="main-container">
-        <h2 class="section-header">Спецпредложение</h2>
-        <div class="special-offer-container">
-          <img src="graphics/02_content/content_main_lux.png" alt="Luxus rooms interior" class="special-offer-image">
-          <h1 class="special-main-headline">Номера категории люкс</h1>
-          <div class="special-info-container">
-            <strong class="special-offer-price">от 5 000 р</strong>
-            <a href="" class="special-offer-link">Подробнее &#62;</a> <!-- указать ссылку на станицу спецпредложений -->
+    <div class="reservation-promo-container">
+      <section class="section-quick-reservation">
+        <div class="main-container">
+          <h2 class="section-header">Быстрая бронь</h2>
+          <div class="quick-reservation-input-form">
+            <input type="text" placeholder="Город" required class="input-quickreserv-field">
+            <input type="text" placeholder="Категория номера" list="reserv-room-type" class="input-quickreserv-field">
+            <!-- list= id элемента <datalist> со списком категорий номеров -->
+            <datalist id="reserv-room-type">
+              <option value="Эконом"></option>
+              <option value="Семейный"></option>
+              <option value="Бизнес"></option>
+              <option value="Премиум"></option>
+            </datalist>
+            <input type="text" placeholder="Дата заселения" required class="input-quickreserv-field">
+            <input type="number" placeholder="Количество ночей" min="1" max="30" step="1" required
+              class="input-quickreserv-field">
+            <input type="number" placeholder="Количество гостей" min="1" max="9" step="1" required
+              class="input-quickreserv-field">
+            <input type="submit" value="Найти номер" class="input-quickreserv-submit-btn">
+            <small class="quickreserv-offers-counter"><span class="quickreserv-total-offersnumber">9 756</span>
+              предложений доступно</small>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="section-special-offer">
+        <div class="main-container">
+          <h2 class="section-header">Спецпредложение</h2>
+          <article class="special-offer-article">
+            <h3 class="special-offer-headline">Номера категории люкс</h3>
+            <span class="special-offer-price">от 5 000 р</span>
+            <a href="" class="next-page-link">Подробнее &#62;</a>
+            <!-- указать ссылку на страницу спецпредложений -->
+          </article>
+        </div>
+      </section>
+    </div>
+
 
     <section class="section-about-us">
       <div class="main-container">
@@ -91,45 +93,29 @@
         <ul class="section-services-list">
           <li class="services-list-item">
             <div class="services-item-container">
-              <img src="graphics/02_content/content_services_01_exkl.png" alt="Champange glasses and seaview"
-                class="services-item-image">
-              <div class="item-info-container">
-                <h3 class="services-headline">Эксклюзивное облуживание &#62;</h3>
-                <p class="services-paragraph">Равным образом постоянный количественный рост и сфера нашей активности</p>
-              </div>
+              <h3 class="services-headline"><a href="" class="next-page-link">Эксклюзивное облуживание &#62;</a></h3> <!-- Указать ссылку на страницу услуги -->
+              <p class="services-paragraph">Равным образом постоянный количественный рост и сфера нашей активности</p>
             </div>
           </li>
           <li class="services-list-item">
             <div class="services-item-container">
-              <img src="graphics/02_content/content_services_02_bank.png" alt="Decorated dining table"
-                class="services-item-image">
-              <div class="item-info-container">
-                <h3 class="services-headline">Аренда банкетных залов &#62;</h3>
-                <p class="services-paragraph">Значимость этих проблем настолько очевидна, что дальнейшее развитие
-                  различных форм.</p>
-              </div>
+              <h3 class="services-headline"><a href="" class="next-page-link">Аренда банкетных залов &#62;</a></h3> <!-- Указать ссылку на страницу услуги -->
+              <p class="services-paragraph">Значимость этих проблем настолько очевидна, что дальнейшее развитие
+                различных форм.</p>
             </div>
           </li>
           <li class="services-list-item">
             <div class="services-item-container">
-              <img src="graphics/02_content/content_services_03_spa.png" alt="Luxurious swimming pool interior"
-                class="services-item-image">
-              <div class="item-info-container">
-                <h3 class="services-headline">Сауны, бассейны, бани, фитнес-залы &#62;</h3>
-                <p class="services-paragraph">Не следует, однако забывать, что начало повседневной работы по
-                  формированию позиции</p>
-              </div>
+              <h3 class="services-headline"><a href="" class="next-page-link">Сауны, бассейны, бани, фитнес-залы &#62;</a></h3> <!-- Указать ссылку на страницу услуги -->
+              <p class="services-paragraph">Не следует, однако забывать, что начало повседневной работы по
+                формированию позиции</p>
             </div>
           </li>
           <li class="services-list-item">
             <div class="services-item-container">
-              <img src="graphics/02_content/content_services_04_park.png" alt="Retro cars parked"
-                class="services-item-image">
-              <div class="item-info-container">
-                <h3 class="services-headline">Охраняемые автомобильные стоянки &#62;</h3>
-                <p class="services-paragraph">Не следует, однако забывать, что начало повседневной работы по
-                  формированию позиции</p>
-              </div>
+              <h3 class="services-headline"><a href="" class="next-page-link">Охраняемые автомобильные стоянки &#62;</a></h3><!-- Указать ссылку на страницу услуги -->
+              <p class="services-paragraph">Не следует, однако забывать, что начало повседневной работы по
+                формированию позиции</p>
             </div>
           </li>
         </ul>
@@ -182,17 +168,15 @@
                 class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>4 698 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 4 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona española</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 4 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona española</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
@@ -203,17 +187,15 @@
                 class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>5 148 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 4 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona son típicas</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 4 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona son típicas</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
@@ -224,38 +206,35 @@
                 class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 254 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 5 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona de la guerra</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 5 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona de la guerra</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
+
               </div>
             </div>
           </li>
 
           <li class="accomodation-list-item">
             <div class="list-item-container">
-              <img src="graphics/04_catalogue/cat_lag_ment_piad.jpg"
-                alt="Lagoona mentira piadosa hotel image" class="accomodation-item-image">
+              <img src="graphics/04_catalogue/cat_lag_ment_piad.jpg" alt="Lagoona mentira piadosa hotel image"
+                class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 320 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 5 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona mentira piadosa</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 5 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona mentira piadosa</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
@@ -266,17 +245,15 @@
                 alt="Lagoona empujar la creatividad hotel image" class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 457 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 4 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona empujar la creatividad</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 4 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona empujar la creatividad</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
@@ -287,38 +264,34 @@
                 class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 490 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 4 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona el retorno</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 4 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona el retorno</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
 
           <li class="accomodation-list-item">
             <div class="list-item-container">
-              <img src="graphics/04_catalogue/cat_lag_enf_termino.jpg"
-                alt="Lagoona enfermo terminó hotel image" class="accomodation-item-image">
+              <img src="graphics/04_catalogue/cat_lag_enf_termino.jpg" alt="Lagoona enfermo terminó hotel image"
+                class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 505 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 5 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona enfermo terminó</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 5 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona enfermo terminó</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
@@ -329,26 +302,22 @@
                 alt="Lagoona suerte siguió siempre hotel image" class="accomodation-item-image">
               <div class="dwelling-properties-container">
                 <div class="dwelling-price">от <strong>6 824 р</strong> / ночь</div>
-                <div class="dwelling-rating">
-                  <img src="graphics/" alt="Hotel rating 4 stars out of 5">
-                  <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                  <img src="graphics/" alt="">
-                </div>
-                <div class="dwelling-name">Lagoona suerte siguió siempre</div>
-                <div class="dwelling-citycountry">Барселона, Испания</div>
-                <input type="button" value="Номера" class="dwelling-rooms-button">
+                <img src="graphics/" alt="Hotel rating 4 stars out of 5">
+                <!-- Font Awesome еще не загружен, указать ссылку на иконки звездочек -->
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <img src="graphics/" alt="">
+                <h4 class="dwelling-name">Lagoona suerte siguió siempre</h4>
+                <span class="dwelling-citycountry">Барселона, Испания</span>
+                <a href="" class="next-page-link accomodation-rooms-link">Номера</a> <!-- дополнить ссылкой на номера отеля -->
               </div>
             </div>
           </li>
 
           <li class="accomodation-list-item">
             <div class="list-item-container">
-              <img src="graphics/04_catalogue/cat_link_all_options.png" alt="Sea cliffs and boat image"
-                class="accomodation-list-heroimg">
-              <a href="" class="accomodation-list-otherslink">Посмотреть все варианты &#62;</a>
+              <a href="" class="next-page-link">Посмотреть все варианты &#62;</a>
               <!-- добавить ссылку на страницу всех вариантов -->
             </div>
           </li>
