@@ -203,24 +203,19 @@ p {
   justify-content: space-between;
   align-items: stretch;
   align-content: space-between;
+  margin: -12px;
   max-height: max-content;
   min-height: 675px;
 }
 
 .services-list-item {
-  flex: 1 1 47%;
+  flex: 1 1 46%;
+  margin: 12px;
   padding: 165px 130px 40px 45px;
   display: block;
-  max-width: 570px;
-  min-width: max-content;
   max-height: 100%;
   min-height: max-content;
   outline: 2px solid red;
-}
-
-
-.services-list-item:nth-child(1n+3) { /* функция Xn+Y описывает выбираемые номера элементов среди группы однотипных элементов. Нумерация элементов (Y) может начинаться с единицы и далее. Для выбора элементов каждый раз к Y прибавляется шаг X. При этом X и Y >< 0 (integer) */
-  margin-top: 25px;
 }
 
 .services-headline {
@@ -232,25 +227,22 @@ p {
 .section-benefits-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: left;
   align-items: stretch;
   align-content: space-between;
+  margin: -22px;
   max-height: max-content;
   min-height: 575px;
 }
 
 .benefits-list-card {
   flex: 1 1 23%;
+  margin: 11px;
   padding: 45px 55px 40px 45px;
-  max-width: 276px;
-  min-width: max-content;
   max-height: 100%;
   min-height: max-content;
+  min-width: 276px;
   outline: 2px solid red;
-}
-
-.benefits-list-card:nth-child(1n+5) {
-  margin-top: 25px;
 }
 
 .benefits-paragraph {
@@ -258,7 +250,7 @@ p {
   height: 190px;
 }
 
-/* Acomodation style */
+/* Accomodation style */
 
 .accomodation-list {
   display: flex;
@@ -266,19 +258,15 @@ p {
   justify-content: space-between;
   align-items: stretch;
   align-content: space-between;
-  max-width: max-content;
+  margin: -22px;
   min-height: 1370px;
 }
 
 .accomodation-list-item {
   flex: 1 1 28%;
-  max-width: 375px;
-  min-width: max-content;
+  margin: 11px;
+  min-width: 370px;
   outline: 2px solid red;
-}
-
-.accomodation-list-item:nth-child(1n+4) {
-  margin-top: 25px;
 }
 
 .dwelling-properties-container {
