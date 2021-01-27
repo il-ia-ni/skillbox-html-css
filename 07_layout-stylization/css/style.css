@@ -420,7 +420,8 @@ p {
 
 .benefits-list-card {
   flex: 1 1 23%;
-  margin: 11px;
+  margin-right: 22px;
+  margin-bottom: 22px;
   padding: 44px;
   max-height: 100%;
   min-height: max-content;
@@ -437,7 +438,14 @@ p {
   background-size: auto 59px;
   background-repeat: no-repeat;
   background-color: transparent;
+}
 
+.row-lastitem {
+  margin-right: 0;
+}
+
+.lastrow {
+  margin-bottom: 0;
 }
 
 .background-benefit1 {
@@ -485,9 +493,19 @@ p {
 }
 
 .accomodation-list-item {
-  flex: 1 1 28%;
-  margin: 11px;
-  min-width: 370px;
+  flex: 1 1 40%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 390px;
+  max-height: 460px;
+}
+
+.acc-row-lastitem {
+  margin-right: 0;
+}
+
+.acc-lastrow {
+  margin-bottom: 0;
 }
 
 .accomodation-item-image {
@@ -557,7 +575,9 @@ p {
 }
 
 .others-container {
-  padding: 368px 40px 50px 40px;
+  padding: 368px 40px 55px 40px;
+  width: 390px;
+  height: 460px;
   border: 0px solid transparent;
   border-radius: 15px;
   background-size: auto 100%;
