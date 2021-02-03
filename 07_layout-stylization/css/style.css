@@ -165,10 +165,11 @@ p {
   color: #CC9933;
 }
 
-.navigation {
+.navigation { /* флекс-раздел навигации со списком меню навигации и формой поиска */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row nowrap; /* Значения по умолчанию. Элементы флекс-панели навигации не переносятся при сужении экрана меньше их мин размеров */
   margin-top: 30px;
   margin-bottom: 70px;
   padding-left: 20px;
@@ -176,33 +177,45 @@ p {
   height: 70px;
 }
 
-.header-nav-menu {
+.header-nav-menu { /* ul-список меню навигации */
+  flex: 1 1 60%; /* занимает не менее 60% от ширины флекс-панели навигации, 755 пикс согласно макету */
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-flow: row nowrap;
+  padding-right: 15px; /* Временный отступ справа от панели навигации до поля поиска, до макета адаптива */
 }
 
 .nav-menu-item {
+  flex: 1 1 auto; /* все элементы списка меню навигации кроме последнего забирают равную долю свободного пространства списка меню навигации */
   font-size: 13px;
   line-height: 1;
   font-weight: normal;
+  white-space: nowrap; /* Отключаем перенос слов в флекс-элементах списка меню навигации при сужении списка меню навигации */
+}
+
+.nav-menu-item:last-child {
+  flex: 5 1 auto; /* последний элемент списка меню навигации забирает все оставшееся свободное пространство списка меню навигации */
 }
 
 .nav-menu-item:not(:last-child) {
-  margin-right: 45px;
+  margin-right: 15px; /* максимальный отступ справа между элементами списка меню навигации 45px согл макету. Слишком большой при сужении экрана */
 }
 
 .nav-menu-link {
   color: #333333
 }
 
-.header-searchform {
+.header-searchform { /* форма поиска */
+  flex: 1 1 23%; /* занимает не менее 23% от ширины флекс-панели навигации, 355 пикс согласно макету */
   position: relative;
 }
 
 .header-searchform-inputfield {
   display: inline-block;
   padding: 18px 20px;
-  min-width: 350px;
+  max-width: 355px; /* макс ширина формы поиска согл макету */
+  min-width: 100%; /* от ширины header-searchform */
   height: 49px;
   background:#F1F1F1;
   border: 0px solid transparent;
@@ -232,22 +245,22 @@ p {
 
 .reservation-promo-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-flow: row wrap;
+  justify-content: flex-start; /* Поскольку флекс-элементы забирают всю доступную ширину родителя, а маргины задаем не самой секции, а ее дочернему контейнеру div с инпутами, используем значение justify-content по умолчанию для расположения флекс-элементов по главной оси внутри флекс-контейнера. Space-between тут не нужен */
+  align-items: stretch; /* Меньшая по высоте секция вытягивается по высоте большей секции внутри контейнера спецпредложений */
+  flex-flow: row nowrap;
   }
 
 /* Quick Reservation style */
 
 .section-quick-reservation {
-  flex: 2 0 25%;
+  flex: 1 1 38%;
 }
 
 .quick-reservation-input-form {
   display: flex;
   flex-flow: column wrap;
-  min-width: 520px;
   margin-right: 55px;
+  max-width: 520px;
 }
 
 .input-quickreserv-field {
@@ -260,7 +273,7 @@ p {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
-  max-width: 420px;
+  min-width: 420px; /* Минимальная ширина контейнера с кнопкой Найти и счетчиком Предложений доступна, чтобы не было переноса строки при сжатии родительской секции */
 }
 
 .quickreserv-offers-counter {
@@ -278,33 +291,38 @@ p {
 /* Special Offer style */
 
 .section-special-offer {
-  flex: 1 1 35%;
+  flex: 1 1 40%;
+  display: flex; /* расположение контента секции - заголовок h2.section-header и статья Номера категории люкс */
+  flex-direction: column; /* в столбец */
 }
 
 .special-offer-article {
+  flex: 1; /* flex-grow для article = 1, для заголовка h2 = 0 (по умолчанию значение flex: 0 1 auto;). Т.о. статья занимает всё сободное пространство секции section-special-offer */
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
-  padding-bottom: 35px;
-  padding-left: 40px;
-  max-height: 540px;
+  padding: 40px;
   border: 0px solid transparent;
   border-radius: 15px;
-  background-size: auto 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   background-image: url('../graphics/02_content/content_main_lux.png');
 }
 
 .special-offer-headline {
-  margin-bottom: 0;
-  padding-top: 100%;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   max-width: 320px;
   font-size: 66px;
   line-height: 0.85;
   font-weight: 800;
   color: #FFFFFF;
+}
+
+.specialoffer-container {
+  display: inline-block;
+  min-width: 330px; /* Минимальная ширина контейнера с Ценой спецпредложений и ссылкой Подробнее, чтобы не было переноса строки при сжатии родительской секции */
 }
 
 .special-offer-price {
@@ -347,9 +365,9 @@ p {
 
 .section-services-list {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap; /* перенос карточек на новую строку разрешен */
   justify-content: space-between;
-  align-items: stretch;
+  align-items: stretch; /* Позволяет не задавать карточкам раздела значения min-height, растягиваются по размеру самого большого содержимого одной из карточек. Max-height для карточек не подходит, т.к. не учитывает использование текста содержимиого бОльшего размера, чем в макете! */
   align-content: space-between;
 }
 
@@ -359,7 +377,6 @@ p {
   margin-bottom: 25px;
   display: block;
   max-width: 570px;
-  max-height: 325px;
 }
 
 .row-lastitem {
@@ -430,7 +447,6 @@ p {
   justify-content: left;
   align-items: stretch;
   align-content: space-between;
-  max-height: max-content;
   min-height: 575px;
 }
 
@@ -439,8 +455,8 @@ p {
   margin-right: 22px;
   margin-bottom: 22px;
   padding: 42px;
-  max-height: 275px;
   max-width: 275px;
+  min-width: 250px;
 }
 
 .row-lastitem {
@@ -455,7 +471,7 @@ p {
   display: inline-block;
   padding-top: 80px;
   max-width: 190px;
-  min-height: 188px;
+  min-height: 188px; /* согл макету, включая высоту фона-иконки */
   font-size: 16px;
   line-height: 2;
   font-weight: normal;
@@ -529,17 +545,20 @@ p {
 
 .dwelling-properties-container {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  align-content: flex-start;
+  flex-flow: row wrap;
+  align-content: flex-start; /* выравниваем флекс-элементы по левому краю второстепенной оси */
   margin: 35px 40px 45px 45px;
   max-width: 285px;
+  min-width: 225px; /* во избежание перехода части звезд рейтинга на новую строку при сужении экрана */
 }
 
 .flex-item-1 { /* acc price container */
-  flex: 1 1 55%;
-  margin-right: 30px;
+  flex: 10 1 55%;
+  margin-right: 5px; /* макс 30px согл макету, набирается благодаря большему значению flex-grow у контейнера ценника */
+  min-width: 146px;
+  white-space: nowrap;
 }
 
 .flex-item-2 { /* acc rating stars img */
